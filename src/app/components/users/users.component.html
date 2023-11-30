@@ -2,7 +2,9 @@
   <div class="content">
     <h2>Usuários cadastrados</h2>
     <div class="users">
-      <app-display-user></app-display-user>
+      <div *ngFor="let list of usersAll">
+        <app-display-user [user]="list"></app-display-user>
+      </div>
     </div>
   </div>
 </div>

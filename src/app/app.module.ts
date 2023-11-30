@@ -13,9 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
+import { BotaoAddComponent } from './components/botao-add/botao-add.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, BotaoAddComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

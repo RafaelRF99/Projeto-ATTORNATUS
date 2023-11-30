@@ -17,6 +17,5 @@ export class DisplayUserComponent implements OnInit {
     this.id = this.user.id;
     this.name = this.user.name;
     this.email = this.user.email;
-    console.log(this.name, this.email);
   }
 }

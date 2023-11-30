@@ -15,4 +15,13 @@ export class UsersService {
   getAllUsers(): Observable<IUsers[]> {
     return this.http.get<IUsers[]>(this.apiUrl);
   }
+
+  create(user: IUsers): Observable<IUsers> {
+    return this.http.post<IUsers>(this.apiUrl, user);
+  }
+
+  searchId(id: number): Observable<IUsers> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<IUsers>(url);
+  }
 }

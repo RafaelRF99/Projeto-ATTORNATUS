@@ -1,5 +1,4 @@
 .display {
-  max-width: 800px;
   height: 45px;
   background-color: #fff;
 
@@ -8,4 +7,18 @@
   align-items: center;
 
   padding-inline: 1rem;
+
+  font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .display {
+    height: auto;
+    padding-block: 0.8rem;
+    flex-direction: column;
+
+    .icon {
+      display: none;
+    }
+  }
 }

@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { BotaoAddComponent } from './components/botao-add/botao-add.component';
 import { CreateUserComponent } from './components/botao-add/create-user/create-user.component';
+import { DisplayUserComponent } from './components/display-user/display-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreateUserComponent } from './components/botao-add/create-user/create-u
     HeaderComponent,
     BotaoAddComponent,
     CreateUserComponent,
+    DisplayUserComponent,
   ],
   imports: [
     BrowserModule,

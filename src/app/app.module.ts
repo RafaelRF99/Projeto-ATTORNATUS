@@ -8,15 +8,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { BotaoAddComponent } from './components/botao-add/botao-add.component';
+import { CreateUserComponent } from './components/botao-add/create-user/create-user.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, BotaoAddComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    BotaoAddComponent,
+    CreateUserComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +37,9 @@ import { BotaoAddComponent } from './components/botao-add/botao-add.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    MatCardModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

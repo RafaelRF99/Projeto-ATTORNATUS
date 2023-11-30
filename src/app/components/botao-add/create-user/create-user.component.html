@@ -1,0 +1,38 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title class="title">Adicionar novo usuário</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <div class="content-user">
+      <mat-form-field appearance="fill">
+        <mat-label>Usuário (e-mail)</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
+    <div class="information">
+      <mat-form-field class="cpf" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="tel" appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="contato" appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="celular">CELULAR</mat-option>
+          <mat-option value="telefone">TELEFONE</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <p>
+      O usuário receberá uma senha provisória para acesso ao sistema por SMS.
+    </p>
+    <button mat-raised-button color="primary">Salvar</button>
+  </mat-card-content>
+</mat-card>

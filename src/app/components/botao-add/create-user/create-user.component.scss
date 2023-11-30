@@ -1,0 +1,58 @@
+.container {
+  min-height: 50vh;
+
+  padding: 0.6rem;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+  .content {
+    .content-user {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    .cpf {
+      width: 360px;
+    }
+
+    .tel {
+      width: 230px;
+    }
+
+    .contato {
+      width: 150px;
+    }
+  }
+
+  p {
+    color: #2a17d3;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    max-height: 450px;
+    overflow-y: scroll;
+    .information {
+      .cpf {
+        min-width: 100%;
+      }
+
+      .tel {
+        min-width: 100%;
+      }
+
+      .contato {
+        min-width: 100%;
+      }
+    }
+  }
+}

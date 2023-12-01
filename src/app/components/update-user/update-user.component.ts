@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { IUsers } from 'src/app/core/types/types.interface';
 import { UsersService } from 'src/app/service/users.service';
-import { DisplayUserComponent } from '../display-user/display-user.component';
 
 @Component({
   selector: 'app-update-user',

@@ -28,9 +28,5 @@ export class DisplayUserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe();
-    // this.service.searchId(this.user.id).subscribe((dado) => {
-    //   this.service.SelectedUser = dado;
-    //   console.log(dado);
-    // });
   }
 }

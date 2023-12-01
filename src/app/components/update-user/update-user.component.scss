@@ -40,6 +40,12 @@
   .botao {
     display: flex;
     gap: 1rem;
+    .delete {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      color: #ffee00;
+    }
   }
 }
 

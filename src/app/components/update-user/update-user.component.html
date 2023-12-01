@@ -62,6 +62,15 @@
         ATUALIZAR
       </button>
       <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+      <div class="delete">
+        <button
+          (click)="delete()"
+          mat-icon-button
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

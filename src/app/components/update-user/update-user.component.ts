@@ -42,4 +42,13 @@ export class UpdateUserComponent implements OnInit {
     });
     this.update = true;
   }
+
+  delete() {
+    const UserSelected = this.data.user;
+    this.service.delete(UserSelected).subscribe({
+      error(err) {
+        console.log(err);
+      },
+    });
+  }
 }

@@ -20,7 +20,7 @@ export class CreateUserComponent implements OnInit {
       email: [null, Validators.compose([Validators.required])],
       name: [null, Validators.compose([Validators.required])],
       cpf: [null, Validators.compose([Validators.required])],
-      telefone: [null, Validators.compose([Validators.required])],
+      celular: [null, Validators.compose([Validators.required])],
     });
   }
 

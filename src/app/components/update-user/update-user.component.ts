@@ -28,8 +28,7 @@ export class UpdateUserComponent implements OnInit {
       email: [null, Validators.compose([Validators.required])],
       name: [null, Validators.compose([Validators.required])],
       cpf: [null, Validators.compose([Validators.required])],
-      telefone: [null, Validators.compose([Validators.required])],
-      celular: [null],
+      celular: [null, Validators.compose([Validators.required])],
     });
     this.form.patchValue(this.data.user);
   }

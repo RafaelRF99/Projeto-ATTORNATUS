@@ -32,18 +32,18 @@
           >
         </mat-form-field>
         <mat-form-field class="tel" appearance="fill">
-          <mat-label>Telefone</mat-label>
-          <input matInput formControlName="telefone" />
+          <mat-label>Celular</mat-label>
+          <input matInput formControlName="celular" />
           <mat-error
-            *ngIf="form.get('telefone')?.errors?.['required'] && form.get('telefone')?.touched"
+            *ngIf="form.get('celular')?.errors?.['required'] && form.get('celular')?.touched"
             >*Campo obrigatório</mat-error
           >
         </mat-form-field>
         <mat-form-field class="contato" appearance="fill">
           <mat-label>Selecione</mat-label>
           <mat-select>
-            <mat-option value="celular">CELULAR</mat-option>
-            <mat-option value="telefone">TELEFONE</mat-option>
+            <mat-option value="na">N/A</mat-option>
+            <mat-option value="CELULAR">CELULAR</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

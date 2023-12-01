@@ -3,6 +3,5 @@ export interface IUsers {
   name: string;
   email: string;
   cpf: string;
-  telefone: string;
   celular: string;
 }

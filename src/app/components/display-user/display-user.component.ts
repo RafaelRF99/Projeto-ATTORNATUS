@@ -14,7 +14,6 @@ export class DisplayUserComponent implements OnInit {
     name: '',
     email: '',
     cpf: '',
-    telefone: '',
     celular: '',
   };
 

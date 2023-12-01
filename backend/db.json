@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "rafaelferreira99@hotmail.com",
+      "name": "Rafael Ferreira",
+      "cpf": "12345678912",
+      "celular": "19998255728"
+    },
+    {
+      "id": 2,
+      "name": "Ana Larissa dos Reis Ferreira",
+      "email": "ana@hotmail.com",
+      "cpf": "12345678912",
+      "telefone": 12345678,
+      "celular": 12345678
+    },
+    {
+      "id": 3,
+      "email": "euder@hotmail.com",
+      "name": "Euder Alves",
+      "cpf": "12345678912",
+      "celular": "123456789"
+    },
+    {
+      "id": 4,
+      "email": "geraldo@hotmail.com",
+      "name": "Geraldo Francisco Ferreira",
+      "cpf": "12345678912",
+      "celular": "12345678"
+    },
+    {
+      "id": 5,
+      "email": "edna@hotmail.com",
+      "name": "Edna Bertolino Ferreira",
+      "cpf": "21987654321",
+      "celular": "12345678"
+    },
+    {
+      "id": 6,
+      "email": "andrevecchi@hotmail.com",
+      "name": "Andre Vecchi",
+      "cpf": "12345678912",
+      "celular": "12345678"
+    },
+    {
+      "id": 7,
+      "email": "guilherme@gmail.com.br",
+      "name": "Guilherme Ferreira Cruz",
+      "cpf": "12345678912",
+      "celular": "12345678"
+    },
+    {
+      "email": "carina@hotmail.com",
+      "name": "Carina Ferreira",
+      "cpf": "12345678912",
+      "celular": "12345678",
+      "id": 8
+    },
+    {
+      "email": "arthur@gmail.com",
+      "name": "Arthur Canteli",
+      "cpf": "12345678912",
+      "celular": "12345678",
+      "id": 9
+    }
+  ]
+}

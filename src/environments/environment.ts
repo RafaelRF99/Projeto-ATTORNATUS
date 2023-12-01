@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://localhost:3001/users',
+  apiUrl: 'https://restful-api-users.vercel.app/users',
 };

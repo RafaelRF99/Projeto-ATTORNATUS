@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { IUsers } from 'src/app/core/types/types.interface';
 import { UsersService } from 'src/app/service/users.service';
+import { DisplayUserComponent } from '../display-user/display-user.component';
 
 @Component({
   selector: 'app-update-user',
@@ -17,7 +18,8 @@ export class UpdateUserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: UsersService,
     private route: ActivatedRoute,
-    @Inject(MAT_DIALOG_DATA) public data: { user: IUsers }
+    @Inject(MAT_DIALOG_DATA) public data: { user: IUsers },
+    @Inject(MAT_DIALOG_DATA) public windows: DisplayUserComponent
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +32,13 @@ export class UpdateUserComponent implements OnInit {
       celular: [null],
     });
     this.form.patchValue(this.data.user);
+  }
+
+  submit() {
+    this.service.update(this.form.value).subscribe({
+      error(err) {
+        console.log('Algo de errado aconteceu, erro:', err);
+      },
+    });
   }
 }

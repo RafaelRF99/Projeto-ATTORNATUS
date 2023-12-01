@@ -36,6 +36,11 @@
     color: #2a17d3;
     user-select: none;
   }
+
+  .botao {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 580px) {

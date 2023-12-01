@@ -20,8 +20,8 @@ export class UsersService {
     return this.http.post<IUsers>(this.apiUrl, user);
   }
 
-  searchId(id: number): Observable<IUsers> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<IUsers>(url);
+  update(user: IUsers): Observable<IUsers> {
+    const url = `${this.apiUrl}/${user.id}`;
+    return this.http.put<IUsers>(url, user);
   }
 }

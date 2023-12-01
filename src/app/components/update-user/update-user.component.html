@@ -51,8 +51,16 @@
     <p>
       O usuário receberá uma senha provisória para acesso ao sistema por SMS.
     </p>
-    <button mat-raised-button color="primary" [disabled]="!form.valid">
-      Salvar
-    </button>
+    <div class="botao">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!form.valid"
+        (click)="submit()"
+      >
+        ATUALIZAR
+      </button>
+      <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+    </div>
   </mat-card-content>
 </mat-card>

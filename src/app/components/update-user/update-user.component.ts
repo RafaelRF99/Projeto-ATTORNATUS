@@ -13,16 +13,17 @@ import { DisplayUserComponent } from '../display-user/display-user.component';
 })
 export class UpdateUserComponent implements OnInit {
   form!: FormGroup;
+  update: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private service: UsersService,
     private route: ActivatedRoute,
-    @Inject(MAT_DIALOG_DATA) public data: { user: IUsers },
-    @Inject(MAT_DIALOG_DATA) public windows: DisplayUserComponent
+    @Inject(MAT_DIALOG_DATA) public data: { user: IUsers }
   ) {}
 
   ngOnInit(): void {
+    this.update = false;
     this.form = this.formBuilder.group({
       id: [null],
       email: [null, Validators.compose([Validators.required])],
@@ -39,5 +40,6 @@ export class UpdateUserComponent implements OnInit {
         console.log('Algo de errado aconteceu, erro:', err);
       },
     });
+    this.update = true;
   }
 }

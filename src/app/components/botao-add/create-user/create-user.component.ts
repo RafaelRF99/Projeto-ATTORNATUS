@@ -9,6 +9,7 @@ import { UsersService } from 'src/app/service/users.service';
 })
 export class CreateUserComponent implements OnInit {
   form!: FormGroup;
+  update: boolean = false;
 
   constructor(
     private service: UsersService,
@@ -16,6 +17,7 @@ export class CreateUserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.update = false;
     this.form = this.formBuilder.group({
       email: [null, Validators.compose([Validators.required])],
       name: [null, Validators.compose([Validators.required])],
@@ -27,6 +29,7 @@ export class CreateUserComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.service.create(this.form.value).subscribe();
+      this.update = true;
     }
   }
 }

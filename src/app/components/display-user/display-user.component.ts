@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { IUsers } from 'src/app/core/types/types.interface';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 
 @Component({
   selector: 'app-display-user',
@@ -7,15 +9,28 @@ import { IUsers } from 'src/app/core/types/types.interface';
   styleUrls: ['./display-user.component.scss'],
 })
 export class DisplayUserComponent implements OnInit {
-  @Input() user!: IUsers;
+  @Input() user: IUsers = {
+    id: 0,
+    name: '',
+    email: '',
+    cpf: '',
+    telefone: '',
+    celular: '',
+  };
 
-  id: number = 0;
-  name: string = '';
-  email: string = '';
+  constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
-    this.id = this.user.id;
-    this.name = this.user.name;
-    this.email = this.user.email;
+  ngOnInit(): void {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(UpdateUserComponent, {
+      data: { user: this.user },
+    });
+
+    dialogRef.afterClosed().subscribe();
+    // this.service.searchId(this.user.id).subscribe((dado) => {
+    //   this.service.SelectedUser = dado;
+    //   console.log(dado);
+    // });
   }
 }

@@ -1,0 +1,58 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title class="title">Adicionar novo usuário</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <form [formGroup]="form">
+      <div class="content-user">
+        <mat-form-field appearance="fill">
+          <mat-label>Usuário (e-mail)</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error
+            *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched"
+            >*Campo obrigatório</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome Completo</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error
+            *ngIf="form.get('name')?.errors?.['required'] && form.get('name')?.touched"
+            >*Campo obrigatório</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="information">
+        <mat-form-field class="cpf" appearance="fill">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" />
+          <mat-error
+            *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched"
+            >*Campo obrigatório</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="tel" appearance="fill">
+          <mat-label>Telefone</mat-label>
+          <input matInput formControlName="telefone" />
+          <mat-error
+            *ngIf="form.get('telefone')?.errors?.['required'] && form.get('telefone')?.touched"
+            >*Campo obrigatório</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="contato" appearance="fill">
+          <mat-label>Selecione</mat-label>
+          <mat-select>
+            <mat-option value="celular">CELULAR</mat-option>
+            <mat-option value="telefone">TELEFONE</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+    <p>
+      O usuário receberá uma senha provisória para acesso ao sistema por SMS.
+    </p>
+    <button mat-raised-button color="primary" [disabled]="!form.valid">
+      Salvar
+    </button>
+  </mat-card-content>
+</mat-card>

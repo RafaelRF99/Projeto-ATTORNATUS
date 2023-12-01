@@ -20,6 +20,7 @@ import { BotaoAddComponent } from './components/botao-add/botao-add.component';
 import { CreateUserComponent } from './components/botao-add/create-user/create-user.component';
 import { DisplayUserComponent } from './components/display-user/display-user.component';
 import { UsersComponent } from './components/users/users.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UsersComponent } from './components/users/users.component';
     CreateUserComponent,
     DisplayUserComponent,
     UsersComponent,
+    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,8 +13,6 @@ export class BotaoAddComponent {
   openDialog() {
     const dialogRef = this.dialog.open(CreateUserComponent);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe();
   }
 }

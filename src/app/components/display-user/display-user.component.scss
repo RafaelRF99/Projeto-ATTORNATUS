@@ -1,24 +1,8 @@
-.display {
-  height: 45px;
-  background-color: #fff;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding-inline: 1rem;
-
-  font-size: 0.8rem;
+.table-container {
+  position: relative;
+  overflow: auto;
 }
 
-@media (max-width: 800px) {
-  .display {
-    height: auto;
-    padding-block: 0.8rem;
-    flex-direction: column;
-
-    .icon {
-      display: none;
-    }
-  }
+td:nth-child(4) {
+  width: 40px;
 }

@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IUsers } from 'src/app/core/types/types.interface';
 import { UpdateUserComponent } from '../update-user/update-user.component';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-display-user',
@@ -9,21 +10,27 @@ import { UpdateUserComponent } from '../update-user/update-user.component';
   styleUrls: ['./display-user.component.scss'],
 })
 export class DisplayUserComponent implements OnInit {
-  @Input() user: IUsers = {
+  user: IUsers = {
     id: 0,
     name: '',
     email: '',
     cpf: '',
     celular: '',
   };
+  displayedColumns: string[] = ['icon', 'name', 'email', 'action'];
+  dataSource!: IUsers[];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private service: UsersService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.service.getAllUsers().subscribe((dado) => {
+      this.dataSource = dado;
+    });
+  }
 
-  openDialog() {
+  openDialog(user: IUsers) {
     const dialogRef = this.dialog.open(UpdateUserComponent, {
-      data: { user: this.user },
+      data: { user },
     });
 
     dialogRef.afterClosed().subscribe();

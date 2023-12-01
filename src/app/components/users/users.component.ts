@@ -8,13 +8,7 @@ import { UsersService } from 'src/app/service/users.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  usersAll: IUsers[] = [];
-
   constructor(private service: UsersService) {}
 
-  ngOnInit(): void {
-    this.service.getAllUsers().subscribe((dado) => {
-      this.usersAll = dado;
-    });
-  }
+  ngOnInit(): void {}
 }

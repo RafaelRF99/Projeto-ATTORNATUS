@@ -19,10 +19,23 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {
     this.update = false;
     this.form = this.formBuilder.group({
-      email: [null, Validators.compose([Validators.required])],
+      email: [
+        null,
+        Validators.compose([Validators.required, Validators.email]),
+      ],
       name: [null, Validators.compose([Validators.required])],
-      cpf: [null, Validators.compose([Validators.required])],
-      celular: [null, Validators.compose([Validators.required])],
+      cpf: [
+        null,
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+        ]),
+      ],
+      celular: [
+        null,
+        Validators.compose([Validators.required, Validators.minLength(8)]),
+      ],
     });
   }
 

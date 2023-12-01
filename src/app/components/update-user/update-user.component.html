@@ -12,6 +12,10 @@
             *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched"
             >*Campo obrigatório</mat-error
           >
+          <mat-error
+            *ngIf="form.get('email')?.errors?.['email'] && form.get('email')?.touched"
+            >*Tipo email inválido!</mat-error
+          >
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Nome Completo</mat-label>
@@ -27,8 +31,8 @@
           <mat-label>CPF</mat-label>
           <input matInput formControlName="cpf" />
           <mat-error
-            *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched"
-            >*Campo obrigatório</mat-error
+            *ngIf="form.get('cpf')?.errors?.['minlength'] || form.get('cpf')?.errors?.['minlength'] && form.get('cpf')?.touched"
+            >*Quantidade de caracteres inválidas</mat-error
           >
         </mat-form-field>
         <mat-form-field class="tel" appearance="fill">
@@ -37,6 +41,10 @@
           <mat-error
             *ngIf="form.get('celular')?.errors?.['required'] && form.get('celular')?.touched"
             >*Campo obrigatório</mat-error
+          >
+          <mat-error
+            *ngIf="form.get('celular')?.errors?.['minlength'] && form.get('celular')?.touched"
+            >*Quantidade de caracteres inválidas</mat-error
           >
         </mat-form-field>
         <mat-form-field class="contato" appearance="fill">

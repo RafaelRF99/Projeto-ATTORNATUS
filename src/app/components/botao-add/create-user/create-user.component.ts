@@ -33,9 +33,20 @@ export class CreateUserComponent implements OnInit {
         ]),
       ],
       celular: [
-        null,
+        { value: null, disabled: true },
         Validators.compose([Validators.required, Validators.minLength(8)]),
       ],
+      option: ['na', Validators.compose([Validators.required])],
+    });
+    this.form.get('option')?.valueChanges.subscribe((option) => {
+      const celularControl = this.form.get('celular');
+
+      if (option === 'na') {
+        celularControl?.disable();
+        celularControl?.setValue(null);
+      } else {
+        celularControl?.enable();
+      }
     });
   }
 

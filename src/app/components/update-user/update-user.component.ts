@@ -39,11 +39,26 @@ export class UpdateUserComponent implements OnInit {
         ]),
       ],
       celular: [
-        null,
+        { value: null, disabled: true },
         Validators.compose([Validators.required, Validators.minLength(8)]),
       ],
+      option: ['na', Validators.compose([Validators.required])],
+    });
+    this.form.get('option')?.valueChanges.subscribe((option) => {
+      const celularControl = this.form.get('celular');
+
+      if (option === 'na') {
+        celularControl?.disable();
+      } else {
+        celularControl?.enable();
+      }
     });
     this.form.patchValue(this.data.user);
+
+    const initialCelularValue = this.form.get('celular')?.value;
+    if (initialCelularValue !== 'na' && initialCelularValue !== null) {
+      this.form.get('option')?.setValue('celular');
+    }
   }
 
   submit() {

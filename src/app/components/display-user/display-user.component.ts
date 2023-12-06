@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { IUsers } from 'src/app/core/types/types.interface';
 import { UpdateUserComponent } from '../update-user/update-user.component';
 import { UsersService } from 'src/app/service/users.service';
+import { SearchService } from 'src/app/service/search.service';
 
 @Component({
   selector: 'app-display-user',
@@ -18,11 +19,19 @@ export class DisplayUserComponent implements OnInit {
     celular: '',
   };
   displayedColumns: string[] = ['icon', 'name', 'email', 'action'];
-  dataSource!: IUsers[];
+  dataSource: IUsers[] = [];
+  dataSourceFilter!: IUsers[];
+  digitado!: string;
+  searchTerm: string = '';
+
   error: boolean = false;
   loading: boolean = true;
 
-  constructor(public dialog: MatDialog, private service: UsersService) {}
+  constructor(
+    public dialog: MatDialog,
+    private service: UsersService,
+    private searchService: SearchService
+  ) {}
 
   ngOnInit(): void {
     this.service.getAllUsers().subscribe(
@@ -37,6 +46,20 @@ export class DisplayUserComponent implements OnInit {
         this.error = true;
       }
     );
+    this.searchService.getData().subscribe((searchTerm) => {
+      this.digitado = searchTerm;
+      this.applyFilter();
+    });
+  }
+
+  applyFilter() {
+    this.searchService.getData().subscribe((searchTerm) => {
+      this.digitado = searchTerm.trim().toLowerCase();
+      this.dataSourceFilter =
+        this.dataSource?.filter((item) =>
+          item.name.toLowerCase().includes(this.digitado)
+        ) || [];
+    });
   }
 
   openDialog(user: IUsers) {

@@ -21,7 +21,6 @@ export class DisplayUserComponent implements OnInit {
   displayedColumns: string[] = ['icon', 'name', 'email', 'action'];
   dataSource: IUsers[] = [];
   dataSourceFilter!: IUsers[];
-  digitado!: string;
   searchTerm: string = '';
 
   error: boolean = false;
@@ -46,18 +45,17 @@ export class DisplayUserComponent implements OnInit {
         this.error = true;
       }
     );
-    this.searchService.getData().subscribe((searchTerm) => {
-      this.digitado = searchTerm;
+    this.searchService.getData().subscribe(() => {
       this.applyFilter();
     });
   }
 
   applyFilter() {
     this.searchService.getData().subscribe((searchTerm) => {
-      this.digitado = searchTerm.trim().toLowerCase();
+      const search = searchTerm.trim().toLowerCase();
       this.dataSourceFilter =
         this.dataSource?.filter((item) =>
-          item.name.toLowerCase().includes(this.digitado)
+          item.name.toLowerCase().includes(search)
         ) || [];
     });
   }
